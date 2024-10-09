@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgaudin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mgaudin <mgaudin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 10:14:23 by mgaudin           #+#    #+#             */
-/*   Updated: 2024/10/09 10:23:45 by mgaudin          ###   ########.fr       */
+/*   Updated: 2024/10/09 16:14:31 by mgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
 	src_byte = (unsigned char *)src;
 	while (i < n)
 	{
-		dest_byte[i++] = src_byte[i];
+		dest_byte[i] = src_byte[i];
+		i++;
 	}
 	return (dest);
 }

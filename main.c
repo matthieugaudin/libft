@@ -37,4 +37,9 @@ int main(void)
     // int i = 0;
     // while(i < str_len)
     //     printf("%c", str[i++]);
+	// char s[] = "ABCDEFG";
+	// // ft_memmove(s + 3, s + 1, 0);
+	// // printf("%s", s);
+    // const char *s = "meccccyes";
+    // printf("%s = %s\n", &s[6], ft_strrchr(s, 'y'));
 }
