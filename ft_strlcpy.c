@@ -6,11 +6,11 @@
 /*   By: mgaudin <mgaudin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 16:35:21 by mgaudin           #+#    #+#             */
-/*   Updated: 2024/10/09 17:07:34 by mgaudin          ###   ########.fr       */
+/*   Updated: 2024/10/10 12:10:10 by mgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft"
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {

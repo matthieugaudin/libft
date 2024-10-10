@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgaudin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mgaudin <mgaudin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 08:03:30 by mgaudin           #+#    #+#             */
-/*   Updated: 2024/10/09 08:12:15 by mgaudin          ###   ########.fr       */
+/*   Updated: 2024/10/10 12:08:53 by mgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <string.h>
 #include <ctype.h>
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
 	if (32 <= c && c <= 126)
 		return (1);
