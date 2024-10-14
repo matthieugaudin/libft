@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgaudin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 15:37:28 by mgaudin           #+#    #+#             */
-/*   Updated: 2024/10/14 19:29:31 by mgaudin          ###   ########.fr       */
+/*   Created: 2024/10/14 16:23:49 by mgaudin           #+#    #+#             */
+/*   Updated: 2024/10/14 16:54:57 by mgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	unsigned char	*src_byte;
-	unsigned char	*dest_byte;
+	size_t	i;
+	size_t	str_len;
+	char	*str;
 
-	src_byte = (unsigned char *)src;
-	dest_byte = (unsigned char *)dest;
-	while (n > 0)
+	str_len = ft_strlen(s);
+	str = (char *)ft_calloc((str_len + 1), sizeof(char));
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (s[i])
 	{
-		dest_byte[n - 1] = src_byte[n - 1];
-		n--;
+		str[i] = f(i, s[i]);
+		i++;
 	}
-	return (dest);
+	return (str);
 }

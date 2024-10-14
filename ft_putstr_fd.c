@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgaudin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 15:37:28 by mgaudin           #+#    #+#             */
-/*   Updated: 2024/10/14 19:29:31 by mgaudin          ###   ########.fr       */
+/*   Created: 2024/10/14 17:05:37 by mgaudin           #+#    #+#             */
+/*   Updated: 2024/10/14 17:06:22 by mgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	ft_putstr_fd(char *s, int fd)
 {
-	unsigned char	*src_byte;
-	unsigned char	*dest_byte;
-
-	src_byte = (unsigned char *)src;
-	dest_byte = (unsigned char *)dest;
-	while (n > 0)
-	{
-		dest_byte[n - 1] = src_byte[n - 1];
-		n--;
-	}
-	return (dest);
+	write(fd, s, ft_strlen(s));
 }
