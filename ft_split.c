@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgaudin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mgaudin <mgaudin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/11 19:17:34 by mgaudin           #+#    #+#             */
-/*   Updated: 2024/10/11 21:29:12 by mgaudin          ###   ########.fr       */
+/*   Created: 2024/10/14 11:07:44 by mgaudin           #+#    #+#             */
+/*   Updated: 2024/10/15 12:26:27 by mgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,54 +14,90 @@
 
 static size_t	ft_count_subtabs(char const *s, char c)
 {
-	size_t	is_counting;
-	size_t	nb_subtabs;
-	size_t	i;
+	size_t	nb;
+	int		is_in_word;
 
-	is_counting = 1;
-	i = 0;
-	nb_subtabs = 0;
-	while (s[i])
+	nb = 0;
+	while (*s)
 	{
-		if (is_counting == 0 && s[i] == c)
+		is_in_word = 0;
+		while (*s && *s == c)
 		{
-			is_counting = 1;
-			nb_subtabs++;
+			s++;
 		}
-		if (is_counting == 1 && s[i] != c)
-			is_counting = 0;
-		i++;
+		while (*s && *s != c)
+		{
+			if (!is_in_word)
+			{
+				is_in_word = 1;
+				nb++;
+			}
+			s++;
+		}
+		is_in_word = 0;
 	}
-	return(nb_subtabs);
+	return (nb);
 }
 
-static unsigned int	ft_fill_tab(size_t nb_subtabs, char	**tab)
+static size_t	ft_fill_subtab(char **tab, int pos, size_t len)
 {
-	size_t i;
-
-	(void)nb_subtabs;
-	i = 0;
-	while (tab[i])
+	tab[pos] = (char *)malloc((len + 1) * sizeof(char));
+	if (!tab[pos])
 	{
-		printf("%s", **tab[i]);
+		while (pos >= 0)
+		{
+			free(tab[pos]);
+			pos--;
+		}
+		free(tab);
+		return (1);
+	}
+	tab[pos][len] = 0;
+	return (0);
+}
+
+static size_t	ft_fill_tab(char **tab, char const *s, char c)
+{
+	size_t	len;
+	int		pos;
+
+	pos = 0;
+	while (*s)
+	{
+		len = 0;
+		while (*s && *s == c)
+		{
+			s++;
+		}
+		while (*s && *s != c)
+		{
+			len++;
+			s++;
+		}
+		if (len > 0)
+		{
+			if (ft_fill_subtab(tab, pos, len))
+				return (1);
+			ft_strlcpy(tab[pos], s - len, len + 1);
+			pos++;
+		}
 	}
 	return (0);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	size_t nb_subtabs;
-	char	**str;
+	char	**tab;
+	size_t	tab_len;
 
-	nb_subtabs = ft_count_subtabs(s, c);
-	str = (char **)malloc((nb_subtabs + 1) * sizeof(char *));
-	if (!str)
-		return (str);
-	ft_fill_tab(nb_subtabs, str);
-	return (str);
-}
-
-int main(void)
-{
-	ft_split("  je suis   test  ", ' ');
+	if (!s)
+		return (NULL);
+	tab_len = ft_count_subtabs(s, c);
+	tab = (char **)malloc((tab_len + 1) * sizeof(char *));
+	if (!tab)
+		return (NULL);
+	tab[tab_len] = 0;
+	if (ft_fill_tab(tab, s, c))
+		return (NULL);
+	return (tab);
 }

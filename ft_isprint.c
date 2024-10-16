@@ -6,13 +6,11 @@
 /*   By: mgaudin <mgaudin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 08:03:30 by mgaudin           #+#    #+#             */
-/*   Updated: 2024/10/10 12:08:53 by mgaudin          ###   ########.fr       */
+/*   Updated: 2024/10/15 12:34:40 by mgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-#include <ctype.h>
 
 int	ft_isprint(int c)
 {

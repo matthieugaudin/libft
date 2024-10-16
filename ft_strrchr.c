@@ -6,7 +6,7 @@
 /*   By: mgaudin <mgaudin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 17:11:55 by mgaudin           #+#    #+#             */
-/*   Updated: 2024/10/11 11:35:38 by mgaudin          ###   ########.fr       */
+/*   Updated: 2024/10/15 12:18:22 by mgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strrchr(const char *s, int c)
 		s_len--;
 		i++;
 	}
-	if (c == 0)
+	if ((unsigned char)c == '\0')
 		return ((char *)(s + i));
 	return (NULL);
 }
