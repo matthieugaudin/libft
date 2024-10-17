@@ -6,7 +6,7 @@
 /*   By: mgaudin <mgaudin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 15:37:28 by mgaudin           #+#    #+#             */
-/*   Updated: 2024/10/16 15:07:37 by mgaudin          ###   ########.fr       */
+/*   Updated: 2024/10/16 19:03:24 by mgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char	*src_byte;
 	unsigned char	*dest_byte;
 
-	if (!dest)
-		return (NULL);
 	src_byte = (unsigned char *)src;
 	dest_byte = (unsigned char *)dest;
 	if (dest > src && dest < src + n)

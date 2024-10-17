@@ -6,7 +6,7 @@
 /*   By: mgaudin <mgaudin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 10:14:23 by mgaudin           #+#    #+#             */
-/*   Updated: 2024/10/16 15:07:42 by mgaudin          ###   ########.fr       */
+/*   Updated: 2024/10/16 19:02:31 by mgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char	*dest_byte;
 	unsigned char	*src_byte;
 
-	if (!dest)
+	if (!dest && !src)
 		return (NULL);
 	i = 0;
 	dest_byte = (unsigned char *)dest;
