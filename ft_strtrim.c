@@ -6,7 +6,7 @@
 /*   By: mgaudin <mgaudin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 17:24:32 by mgaudin           #+#    #+#             */
-/*   Updated: 2024/10/15 12:33:25 by mgaudin          ###   ########.fr       */
+/*   Updated: 2024/10/19 19:44:35 by mgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		i;
 	char	*str;
 
+	if (!s1)
+		return (NULL);
 	s = 0;
 	while (s1[s] && ft_is_set(s1[s], set))
 		s++;

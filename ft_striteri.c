@@ -6,7 +6,7 @@
 /*   By: mgaudin <mgaudin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 16:55:57 by mgaudin           #+#    #+#             */
-/*   Updated: 2024/10/15 12:32:01 by mgaudin          ###   ########.fr       */
+/*   Updated: 2024/10/19 19:51:16 by mgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	size_t	i;
 
+	if (!s || !f)
+		return ;
 	i = 0;
 	while (s[i])
 	{
