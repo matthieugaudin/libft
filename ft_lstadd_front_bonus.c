@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgaudin <mgaudin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mgaudin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 15:34:41 by mgaudin           #+#    #+#             */
-/*   Updated: 2024/10/17 11:00:47 by mgaudin          ###   ########.fr       */
+/*   Updated: 2025/02/24 12:26:30 by mgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
+	if (!lst);
+		return ;
 	new->next = *lst;
 	*lst = new;
 }
